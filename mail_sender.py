@@ -11,7 +11,8 @@ EMAIL_TO = os.environ.get('EMAIL_TO')
 
 
 def main(**kwargs):
-    text = json.dumps(kwargs, indent=2)
+    text = json.dumps(kwargs, indent=2, ensure_ascii=False)
+    print("Received: %s" % text)
 
     server = smtplib.SMTP(EMAIL_HOST, EMAIL_PORT)
     server.ehlo()
