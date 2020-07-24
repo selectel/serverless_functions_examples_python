@@ -28,4 +28,4 @@ def main(**kwargs):
     server.set_debuglevel(1)
     server.sendmail(EMAIL_HOST_USER, EMAIL_TO, message)
     server.quit()
-    return f"Email was sent"
+    return "Email was sent"
