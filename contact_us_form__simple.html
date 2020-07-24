@@ -9,9 +9,7 @@
   <div class="content container pb-5">
     <div class="row justify-content-md-center mt-5 pl-5">
       <div class="col-8 mb-3">
-        <form class="needs-validation" id="mainForm"
-              method="POST"
-              action="<PASTE YOUR HTTPS URL OF YOUR CLOUD FUNCTION HERE>">
+        <form class="needs-validation" id="mainForm">
           <div class="form-group">
             <label for="name_field">Name</label>
             <input name="name" type="text" class="form-control" id="name_field"
@@ -26,7 +24,7 @@
             <label for="desc_field">Description</label>
             <textarea class="form-control" name="desc" id="desc_field" rows="3"></textarea>
           </div>
-          <button class="btn btn-primary" type="submit">Send feedback</button>
+          <button class="btn btn-primary" type="submit">Submit</button>
         </form>
       </div>
     </div>
@@ -35,13 +33,12 @@
   <script>
     jQuery(function() {
       $('#mainForm').on('submit', function(e) {
-        let $form = $(this);
         e.preventDefault();
         $.ajax({
-          url: $form.attr("action"),
-          type: $form.attr("method"),
+          url: '<INSERT YOUR SERVERLESS CLOUD FUNCTION URL HERE>',
+          type: 'POST',
           cache: false,
-          data: $form.serialize()
+          data: $(e.target).serialize()
         }).done(function() {
           alert('Done.');
         }).fail(function() {
