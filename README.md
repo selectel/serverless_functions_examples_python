@@ -6,3 +6,4 @@ Examples of Selectel Cloud Functions usage
 * [Simple Contact Us HTML Form](https://github.com/selectel/cloud-functions-examples/blob/master/contact_us_form__simple.html)
 * [Contact Us HTML Form with reCAPTCHA](https://github.com/selectel/cloud-functions-examples/blob/master/contact_us_form__recaptcha.html)
 * [Pandas and NumPy usage](https://github.com/selectel/cloud-functions-examples/blob/master/pandas_and_numpy)
+* [Make thumbnail of image from Cloud Storage](https://github.com/selectel/cloud-functions-examples/blob/master/image_convert)
