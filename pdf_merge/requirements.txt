@@ -1,0 +1,2 @@
+python-swiftclient==3.10.1
+PyPDF2==1.26.0
