@@ -3,22 +3,22 @@ import swiftclient
 from PIL import Image, ImageFilter
 from io import BytesIO
 
+# Connect to Selectel Cloud Storage.
+storage = swiftclient.client.Connection(
+    authurl='https://api.selcdn.ru/auth/v1.0',
+    user=os.environ.get("SELECTEL_STORAGE_CLIENT_NAME"),
+    key=os.environ.get("SELECTEL_STORAGE_CLIENT_PASSWORD"),
+    auth_version=1,
+)
+
 
 def main(container_name, object_name, thumb_width=200, format='JPEG'):
-    # Connect to Selectel Cloud Storage.
-    conn = swiftclient.client.Connection(
-        authurl='https://api.selcdn.ru/auth/v1.0',
-        user=os.environ.get("SELECTEL_STORAGE_CLIENT_NAME"),
-        key=os.environ.get("SELECTEL_STORAGE_CLIENT_PASSWORD"),
-        auth_version=1,
-    )
-
     # Generate new file name.
     file_name, file_ext = os.path.splitext(object_name)
     obj_new_name = f"{file_name}_w{thumb_width}.jpg"
 
     # Fetch image.
-    _, obj_body = conn.get_object(container_name, object_name)
+    _, obj_body = storage.get_object(container_name, object_name)
     obj_bytes = BytesIO(obj_body)
 
     # Apply operations to the image.
@@ -28,7 +28,7 @@ def main(container_name, object_name, thumb_width=200, format='JPEG'):
 
     # Upload new image.
     img_bytes = image2bytes(img, format)
-    conn.put_object(container_name, obj_new_name, img_bytes)
+    storage.put_object(container_name, obj_new_name, img_bytes)
 
     # Close streams.
     obj_bytes.close()
