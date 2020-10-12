@@ -1,6 +1,11 @@
+from datetime import datetime
 
-def as_text(**kwargs):
-    return f"{kwargs}"
+container_started_at = datetime.now()
 
-def as_json(**kwargs):
-    return kwargs
+
+def main(**kwargs):
+    return {
+        "kwargs": kwargs,
+        "now": datetime.now().isoformat(),
+        "container_started_at": container_started_at.isoformat(),
+    }
