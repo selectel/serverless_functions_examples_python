@@ -12,6 +12,7 @@ except ImportError:
 
 
 COUPONS_CONTAINER = os.environ.get("COUPONS_CONTAINER", "images")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 def _read_template(file_name):
@@ -27,7 +28,7 @@ def _create_qr_code(url):
     return ET.tostring(code.make_path(), encoding='unicode')
 
 
-svg_template = _read_template('./pdf_create/coupon.svg')
+svg_template = _read_template(os.path.join(BASE_DIR, 'coupon.svg'))
 
 # Connect to Selectel Cloud Storage.
 storage = swiftclient.client.Connection(
