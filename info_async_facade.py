@@ -8,7 +8,6 @@ from urllib import request
 # For more information see: https://openweathermap.org/forecast5#geo5
 OPENWEATHERMAP_URL = "http://api.openweathermap.org/data/2.5/forecast" \
                      "?units=metric&lat={lat}&lon={lon}&appid={key}"
-# Example API Key. Please, change your one.
 OPENWEATHERMAP_API_KEY = os.environ.get('OWM_API_KEY')
 
 
@@ -31,7 +30,6 @@ async def get_forecast(lat, lon):
 # For more information see: https://openexchangerates.org
 OPENEXCHANGERATES_URL = "https://openexchangerates.org/api/latest.json" \
                         "?app_id={key}"
-# Example API Key. Please, change on your one.
 OPENEXCHANGERATES_API_KEY = os.environ.get('OXR_API_KEY')
 
 
