@@ -1,0 +1,15 @@
+{
+    "action_name": "get_weather_and_rates",
+    "module_name": "info_async_facade",
+    "file_name": "info_async_facade.js",
+    "function_name": "main",
+    "env_vars": {
+        "OWM_API_KEY": "3ac7808361946d638e9d20e5caf96019",
+        "OXR_API_KEY": "8a4853b7191f42efb1f43b34ee77992d"
+    },
+    "runtime": "nodejs",
+    "version": "12",
+    "limits": {
+        "memory": 256
+    }
+}
