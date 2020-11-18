@@ -1,0 +1,12 @@
+{
+    "action_name": "barcode_recognizer",
+    "module_name": "barcode_recognizer",
+    "file_name": "barcode_recognizer.py",
+    "function_name": "main",
+    "env_vars": {},
+    "runtime": "python",
+    "version": "images_processing",
+    "limits": {
+        "memory": 512
+    }
+}
