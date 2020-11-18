@@ -1,0 +1,12 @@
+{
+   "action_name": "http_proxy",
+   "module_name": "http_proxy",
+   "file_name": "http_proxy.py",
+   "function_name": "main",
+   "env_vars": {},
+   "runtime": "python",
+   "version": "3.7",
+   "limits": {
+      "memory": 256
+   }
+}
