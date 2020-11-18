@@ -1,0 +1,12 @@
+{
+   "action_name":"hello",
+   "module_name":"hello",
+   "file_name":"hello.py",
+   "function_name":"main",
+   "env_vars": {},
+   "runtime":"nodejs",
+   "version":"12",
+   "limits": {
+      "memory":256
+   }
+}
