@@ -1,7 +1,7 @@
 {
     "action_name": "get_weather_and_rates",
     "module_name": "info_async_facade",
-    "file_name": "info_async_facade.js",
+    "file_name": "info_async_facade.py",
     "function_name": "main",
     "env_vars": {
         "OWM_API_KEY": "3ac7808361946d638e9d20e5caf96019",
