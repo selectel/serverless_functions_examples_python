@@ -5,7 +5,7 @@ DOMAINS_ALLOWED = os.environ.get('DOMAINS_ALLOWED', '*')
 TIMEOUT_SECONDS = os.environ.get('TIMEOUT_SECONDS', 10)
 
 
-def proxy(url):
+def main(url):
     try:
         response = urllib.request.urlopen(url, timeout=TIMEOUT_SECONDS).read()
         return {
