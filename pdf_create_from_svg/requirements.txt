@@ -1,5 +1,5 @@
 python-swiftclient==3.10.1
 qrcode==6.1
 cairosvg==2.5.1
-Jinja2==2.11.2
+Jinja2==2.11.3
 lxml==4.6.2
