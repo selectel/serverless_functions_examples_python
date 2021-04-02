@@ -59,5 +59,5 @@ async def run_chain(lat, lon):
     }
 
 
-def main(**kwargs):
-    return asyncio.run(run_chain(**kwargs))
+async def main(**kwargs):
+    return await run_chain(**kwargs)
