@@ -12,6 +12,7 @@ EMAIL_TO = os.environ.get('EMAIL_TO')
 
 RECAPTCHA_SECRET_KEY = os.environ.get('RECAPTCHA_SECRET_KEY')
 
+
 def is_captcha_challenge_succeed(response_token):
     data = parse.urlencode({
         'secret': RECAPTCHA_SECRET_KEY,
@@ -21,8 +22,10 @@ def is_captcha_challenge_succeed(response_token):
     resp_data = json.load(request.urlopen(req))
     return resp_data.get('success') or False
 
+
 def format_email(**kwargs):
     return json.dumps(kwargs, indent=2, ensure_ascii=False)
+
 
 def send_email(text):
     server = smtplib.SMTP(EMAIL_HOST, EMAIL_PORT)
@@ -39,6 +42,7 @@ def send_email(text):
     server.set_debuglevel(1)
     server.sendmail(EMAIL_HOST_USER, EMAIL_TO, message)
     server.quit()
+
 
 def main(**kwargs):
     if is_captcha_challenge_succeed(kwargs.pop('g-recaptcha-response')):
